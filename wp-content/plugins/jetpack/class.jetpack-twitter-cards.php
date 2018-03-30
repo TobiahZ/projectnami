@@ -52,12 +52,6 @@ class Jetpack_Twitter_Cards {
 
 			return $og_tags;
 		}
-		
-		$the_title = get_the_title();
-		if ( ! $the_title ) {
-			$the_title = get_bloginfo( 'name' );
-		}
-		$og_tags['twitter:text:title'] = $the_title;
 
 		$the_title = get_the_title();
 		if ( ! $the_title ) {

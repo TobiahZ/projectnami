@@ -908,8 +908,6 @@ class UpdraftPlus_BackupModule_dropbox extends UpdraftPlus_BackupModule {
 		// Set the callback URL
 		$callbackhome = UpdraftPlus_Options::admin_page_url().'?page=updraftplus&action=updraftmethod-dropbox-auth';
 		$callback = defined('UPDRAFTPLUS_DROPBOX_AUTH_RETURN_URL') ? UPDRAFTPLUS_DROPBOX_AUTH_RETURN_URL : 'https://auth.updraftplus.com/auth/dropbox/';
-
-		$instance_id = isset($_GET['updraftplus_instance']) ? $_GET['updraftplus_instance'] : '';
 		
 		$instance_id = $this->get_instance_id();
 		// Instantiate the Encrypter and storage objects

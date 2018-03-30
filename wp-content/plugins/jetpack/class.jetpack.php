@@ -4557,14 +4557,6 @@ p {
 			$url = add_query_arg( 'calypso_env', sanitize_key( $_GET['calypso_env'] ), $url );
 		}
 
-		if ( false !== ( $token = Jetpack_Options::get_option( 'onboarding' ) ) ) {
-			$url = add_query_arg( 'onboarding', $token, $url );
-
-			// Remove this once https://github.com/Automattic/wp-calypso/pull/17094 is merged.
-			// Uncomment for development until it's merged.
-			//$url = add_query_arg( 'calypso_env', 'development', $url );
-		}
-
 		return $raw ? $url : esc_url( $url );
 	}
 
@@ -6274,23 +6266,20 @@ p {
 			set_transient( 'jetpack_idc_local', $local_options, MINUTE_IN_SECONDS );
 		}
 
-			$options = array_merge( $local_options, $response );
+		$options = array_merge( $local_options, $response );
 
-			$returned_values = array();
-			foreach( $options as $key => $option ) {
-				if ( 'error_code' === $key ) {
-					$returned_values[ $key ] = $option;
-					continue;
-				}
-
-				if ( is_wp_error( $normalized_url = self::normalize_url_protocol_agnostic( $option ) ) ) {
-					continue;
-				}
-
-				$returned_values[ $key ] = $normalized_url;
+		$returned_values = array();
+		foreach( $options as $key => $option ) {
+			if ( 'error_code' === $key ) {
+				$returned_values[ $key ] = $option;
+				continue;
 			}
 
-			set_transient( 'jetpack_idc_option', $returned_values, MINUTE_IN_SECONDS );
+			if ( is_wp_error( $normalized_url = self::normalize_url_protocol_agnostic( $option ) ) ) {
+				continue;
+			}
+
+			$returned_values[ $key ] = $normalized_url;
 		}
 
 		set_transient( 'jetpack_idc_option', $returned_values, MINUTE_IN_SECONDS );

@@ -290,6 +290,8 @@ class UpdraftPlus_BackupModule_updraftvault extends UpdraftPlus_BackupModule_s3 
 	public function get_configuration_template() {
 		// Used to decide whether we can afford HTTP calls or not, or would prefer to rely on cached data
 		$this->vault_in_config_print = true;
+
+		$shop_url_base = $this->get_url();
 		$get_more_quota = $this->get_url('get_more_quota');
 
 		$vault_settings = $this->get_options();

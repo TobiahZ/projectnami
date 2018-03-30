@@ -252,16 +252,6 @@ abstract class UpdraftPlus_BackupModule {
 	public function filter_frontend_settings_keys() {
 		return array();
 	}
-	
-	/**
-	 * Modifies handerbar template options. Other child class can extend it.
-	 *
-	 * @param array $opts
-	 * @return array - Modified handerbar template options
-	 */
-	protected function transform_options_for_template($opts) {
-		return $opts;
-	}
 
 	/**
 	 * Over-ride this to allow methods to not use the hidden version field, if they do not output any settings (to prevent their saved settings being over-written by just this hidden field

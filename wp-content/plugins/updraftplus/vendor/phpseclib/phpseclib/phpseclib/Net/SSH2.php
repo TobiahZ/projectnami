@@ -2829,7 +2829,7 @@ class Net_SSH2
                 return false;
             }
 
-            $response = $this->_get_binary_packet(true);
+            $response = $this->_get_binary_packet();
             if ($response === false) {
                 user_error('Connection closed by server');
                 return false;

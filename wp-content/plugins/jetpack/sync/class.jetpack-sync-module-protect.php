@@ -1,8 +1,7 @@
 <?php
+
 /**
- * Deprecated. No longer needed.
- *
- * @package Jetpack
+ * logs bruteprotect failed logins via sync
  */
 class Jetpack_Sync_Module_Protect extends Jetpack_Sync_Module {
 
