@@ -90,13 +90,15 @@ new WPCOM_JSON_API_Site_Settings_V1_2_Endpoint( array(
 		'jetpack_portfolio'                    => '(bool) Whether portfolio custom post type is enabled for the site',
 		'jetpack_portfolio_posts_per_page'     => '(int) Number of portfolio projects to show per page',
 		Jetpack_SEO_Utils::FRONT_PAGE_META_OPTION => '(string) The SEO meta description for the site.',
-		Jetpack_SEO_Titles::TITLE_FORMATS_OPTION  => '(array) SEO meta title formats. Allowed keys: front_page, posts, pages, groups, archives',
+		Jetpack_SEO_Titles::TITLE_FORMATS_OPTION => '(array) SEO meta title formats. Allowed keys: front_page, posts, pages, groups, archives',
 		'verification_services_codes'          => '(array) Website verification codes. Allowed keys: google, pinterest, bing, yandex',
 		'amp_is_enabled'                       => '(bool) Whether AMP is enabled for this site',
 		'podcasting_archive'                   => '(string) The post category, if any, used for publishing podcasts',
 		'site_icon'                            => '(int) Media attachment ID to use as site icon. Set to zero or an otherwise empty value to clear',
 		'api_cache'                            => '(bool) Turn on/off the Jetpack JSON API cache',
 		'posts_per_page'                       => '(int) Number of posts to show on blog pages',
+		'posts_per_rss'                        => '(int) Number of posts to show in the RSS feed',
+		'rss_use_excerpt'                      => '(bool) Whether the RSS feed will use post excerpts',
 	),
 
 	'response_format' => array(
